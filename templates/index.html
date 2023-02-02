@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="{{url_for('static',filename='css/styles.css')}}"
+  />
+</head>
+<body>
+   
+    <!-- Coded by Bedimcode Yotube: https://youtu.be/M_eF5oUzilg  -->
+
+
+<div>
+<div>
+    <div class="navbar">
+ 
+        <!-- Navbar logo -->
+        <div class="nav-header">
+          <div class="nav-logo">
+           
+              <p class="name">CREDITS</p>
+            
+          </div>
+        </div>
+         
+        <!-- responsive navbar toggle button -->
+        <input type="checkbox" id="nav-check">
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+       
+        <!-- Navbar items -->
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Project</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+          <input class="loginBtn"></input>
+        </div>
+       
+      </div>
+</div>
+
+
+
+    <div class="container">
+       {%for i in data%}
+       <a href="/data/{{i[0]}}">
+        <div class="card">
+            <div class="card__border">
+                <img src="https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="card image" class="card__img" />
+            </div>
+  
+        <h3 class="card__name">{{i[3]}}</h3>
+        <span class="card__profession">Interpreter</span>
+        <div>
+            <button class="button">{{i[1]}}</button>
+        </div>
+        </div>
+    </a>
+        {%endfor%}
+
+      
+        
+    </div>
+    <div class="all-elephant-cards"></div>
+</div>
+
+    
+    
+<script src="index.js"></script>
+  
+    
+  </body>
+</body>
+</html>
